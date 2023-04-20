@@ -131,7 +131,8 @@ app.put("/districts/:districtId/", async (request, response) => {
       cases = ${cases},
       cured = ${cured},
       active = ${active},
-      deaths = ${deaths};
+      deaths = ${deaths}
+      WHERE district_id = ${districtId};
   `;
   await db.run(updateDistrictQuery);
   response.send("District Details Updated");
